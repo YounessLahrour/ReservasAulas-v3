@@ -1,22 +1,20 @@
 package org.iesalandalus.programacion.reservasaulas.modelo.dominio;
-/*
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.fail;
-
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.PermanenciaPorHora;
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.PermanenciaPorTramo;
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.Tramo;
 import org.junit.Test;
-*/
+
 public class ReservaTest {
-/*	
+
 	private static final String ERROR_EXCEPCION = "Debería haber saltado la excepción.";
 	private static final String ERROR_NO_EXCEPCION = "No debería haber saltado la excepción.";
 	
@@ -30,7 +28,6 @@ public class ReservaTest {
 	private static final Aula AULA = new Aula(NOMBRE_AULA, PUESTOS);
 	private static final PermanenciaPorTramo PERMANENCIA_POR_TRAMO = new PermanenciaPorTramo(DIA, Tramo.MANANA);
 	private static final PermanenciaPorHora PERMANENCIA_POR_HORA = new PermanenciaPorHora(DIA, HORA);
-
 	@Test
 	public void constructorValidoTest() {
 		Reserva reserva = null;
@@ -156,5 +153,5 @@ public class ReservaTest {
 				+ ", aula=[nombre=Salón de actos, puestos=30], permanencia=[dia="+ DIA.format(formato) + ", tramo=Mañana], puntos=25.0]";
 		assertEquals(cadenaEsperada, reserva.toString());
 	}
-*/
+
 }
