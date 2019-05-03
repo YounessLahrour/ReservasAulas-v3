@@ -18,7 +18,7 @@ import org.iesalandalus.programacion.reservasaulas.vista.IVistaReservasAulas;
  *
  * @author Youness
  */
-public class ControladorReservasAulas implements IControladorReservasAulas{
+public class ControladorReservasAulas implements IControladorReservasAulas {
 
     private IVistaReservasAulas vista;
     private IModeloReservasAulas modelo;
@@ -28,75 +28,81 @@ public class ControladorReservasAulas implements IControladorReservasAulas{
         this.vista = vista;
         vista.setControlador((IControladorReservasAulas) this);
     }
-    
+
     public void comenzar() {
-		vista.comenzar();
-	}
-    
+        modelo.leerAulas();
+        modelo.leerProfesores();
+        modelo.leerReservas();
+       
+        vista.comenzar();
+    }
+
     public void salir() {
-		vista.salir();
-	}
-    
+        modelo.escribirAulas();
+        modelo.escribirProfesores();
+        modelo.escribirReservas();
+        System.out.println("Hasta luego Lucas!!!");
+        
+    }
+
     public void insertarAula(Aula aula) throws OperationNotSupportedException, IllegalArgumentException {
-		modelo.insertarAula(aula);
-	}
-    
+        modelo.insertarAula(aula);
+    }
+
     public void borrarAula(Aula aula) throws OperationNotSupportedException, IllegalArgumentException {
-		modelo.borrarAula(aula);
-	}
-    
+        modelo.borrarAula(aula);
+    }
+
     public Aula buscarAula(Aula aula) {
-		return modelo.buscarAula(aula);
-	}
-    
+        return modelo.buscarAula(aula);
+    }
+
     public List<String> representarAulas() {
-		return modelo.representarAulas();
-	}
-    
+        return modelo.representarAulas();
+    }
+
     public void insertarProfesor(Profesor profesor) throws OperationNotSupportedException, IllegalArgumentException {
-		modelo.insertarProfesor(profesor);
-	}
-    
+        modelo.insertarProfesor(profesor);
+    }
+
     public void borrarProfesor(Profesor profesor) throws OperationNotSupportedException, IllegalArgumentException {
-		modelo.borrarProfesor(profesor);
-	}
-    
+        modelo.borrarProfesor(profesor);
+    }
+
     public Profesor buscarProfesor(Profesor profesor) {
-		return modelo.buscarProfesor(profesor);
-	}
-    
+        return modelo.buscarProfesor(profesor);
+    }
+
     public List<String> representarProfesores() {
-		return modelo.representarProfesores();
-	}
-    
+        return modelo.representarProfesores();
+    }
+
     public void realizarReserva(Reserva reserva) throws OperationNotSupportedException, IllegalArgumentException {
-		modelo.realizarReserva(reserva);
-	}
-    
+        modelo.realizarReserva(reserva);
+    }
+
     public void anularReserva(Reserva reserva) throws OperationNotSupportedException, IllegalArgumentException {
-		modelo.anularReserva(reserva);
-	}
-    
+        modelo.anularReserva(reserva);
+    }
+
     public List<String> representarReservas() {
-		return modelo.representarReservas();
-	}
-    
+        return modelo.representarReservas();
+    }
+
     public List<Reserva> getReservasAula(Aula aula) throws IllegalArgumentException {
-		return modelo.getReservasAula(aula);
-	}
-    
+        return modelo.getReservasAula(aula);
+    }
+
     public List<Reserva> getReservasProfesor(Profesor profesor) throws IllegalArgumentException {
-		return modelo.getReservasProfesor(profesor);
-	}
-    
+        return modelo.getReservasProfesor(profesor);
+    }
+
     public List<Reserva> getReservasPermanencia(Permanencia permanencia) throws IllegalArgumentException {
-		return modelo.getReservasPermanencia(permanencia);
-	}
-    
+        return modelo.getReservasPermanencia(permanencia);
+    }
+
     public boolean consultarDisponibilidad(Aula aula, Permanencia permanencia) throws IllegalArgumentException {
-		return modelo.consultarDisponibilidad(aula, permanencia);
-	}
-    
-    
+        return modelo.consultarDisponibilidad(aula, permanencia);
+    }
 
 }

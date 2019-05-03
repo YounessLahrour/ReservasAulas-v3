@@ -6,7 +6,10 @@
 
 package org.iesalandalus.programacion.reservasaulas.modelo;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.naming.OperationNotSupportedException;
 import org.iesalandalus.programacion.reservasaulas.modelo.dao.Aulas;
 import org.iesalandalus.programacion.reservasaulas.modelo.dao.Profesores;
@@ -59,6 +62,18 @@ public class ModeloReservasAulas implements IModeloReservasAulas{
        aulas.borrar(aula);
    }
    
+   public void leerAulas() {try {
+       //throws IOException{
+       aulas.leer();
+       } catch (IOException ex) {
+           Logger.getLogger(ModeloReservasAulas.class.getName()).log(Level.SEVERE, null, ex);
+       }
+   }
+   
+   public void escribirAulas(){
+       aulas.escribir();
+   }
+   
    public List<Profesor> getProfesores(){
        return profesores.getProfesores();
    }
@@ -82,6 +97,19 @@ public class ModeloReservasAulas implements IModeloReservasAulas{
    
    public void borrarProfesor(Profesor profesor) throws OperationNotSupportedException, IllegalArgumentException{
        profesores.borrar(profesor);
+   }
+   
+   @Override
+   public void leerProfesores() {try {
+       //throws IOException{
+       profesores.leer();
+       } catch (IOException ex) {
+           Logger.getLogger(ModeloReservasAulas.class.getName()).log(Level.SEVERE, null, ex);
+       }
+   }
+   
+   public void escribirProfesores(){
+       profesores.escribir();
    }
    
    public List<Reserva> getReservas(){
@@ -128,5 +156,18 @@ public class ModeloReservasAulas implements IModeloReservasAulas{
     @Override
     public List<String> representarReservas() {
         return reservas.representar(); 
+    }
+    
+   @Override
+    public void leerReservas(){ try {
+        //throws IOException{
+        reservas.leer();
+       } catch (IOException ex) {
+           Logger.getLogger(ModeloReservasAulas.class.getName()).log(Level.SEVERE, null, ex);
+       }
+    }
+    
+    public void escribirReservas(){
+        reservas.escribir();
     }
 }

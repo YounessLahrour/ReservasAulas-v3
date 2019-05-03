@@ -29,6 +29,10 @@ public interface IModeloReservasAulas {
     void insertarAula(Aula aula) throws OperationNotSupportedException, IllegalArgumentException;
 
     void borrarAula(Aula aula) throws OperationNotSupportedException, IllegalArgumentException;
+    
+    void leerAulas();
+    
+    void escribirAulas();
 
     List<Profesor> getProfesores();
 
@@ -41,6 +45,10 @@ public interface IModeloReservasAulas {
     void insertarProfesor(Profesor profesor) throws OperationNotSupportedException, IllegalArgumentException;
 
     void borrarProfesor(Profesor profesor) throws OperationNotSupportedException, IllegalArgumentException;
+    
+    void leerProfesores();
+    
+    void escribirProfesores();
 
     List<Reserva> getReservas();
 
@@ -65,5 +73,7 @@ public interface IModeloReservasAulas {
     void leerReservas();
     
     void escribirReservas();
+    
+    
 
 }

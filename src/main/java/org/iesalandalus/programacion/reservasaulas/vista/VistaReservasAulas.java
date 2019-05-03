@@ -59,7 +59,7 @@ public class VistaReservasAulas implements IVistaReservasAulas{
     }
 
     public void salir() {
-        System.out.println("Has salido del programa");
+        controlador.salir();
     }
 
     public void insertarAula() {

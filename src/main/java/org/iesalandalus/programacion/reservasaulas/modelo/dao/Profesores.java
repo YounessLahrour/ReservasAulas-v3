@@ -146,7 +146,7 @@ public class Profesores {
             }
             System.out.println("Fichero aulas escrito satisfactoriamente.");
         } catch (FileNotFoundException e) {
-            System.out.println("No puedo crear el fichero de profesores");
+            System.out.println("No puedo crear el fichero de aulas");
         } catch (IOException e) {
             System.out.println("Error inesperado de Entrada/Salida");
         }
