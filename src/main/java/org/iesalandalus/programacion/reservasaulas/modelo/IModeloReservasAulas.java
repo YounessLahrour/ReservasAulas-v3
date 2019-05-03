@@ -61,5 +61,9 @@ public interface IModeloReservasAulas {
     List<Reserva> getReservasPermanencia(Permanencia permanencia) throws IllegalArgumentException;
 
     boolean consultarDisponibilidad(Aula aula, Permanencia permanencia) throws IllegalArgumentException;
+    
+    void leerReservas();
+    
+    void escribirReservas();
 
 }
